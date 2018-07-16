@@ -21,37 +21,37 @@ import stepdefs.Loginpage;
 )
 public class RunTest extends AbstractTestNGCucumberTests {
 
-    @AfterClass
-    public static void teardown() {
-        Loginpage loginpage = new Loginpage();
-        List l = loginpage.getList();
-        writeTestOutput(l);
-        System.out.println("Ran the after");
-    }
-
-    public static void writeTestOutput(List list) {
-        System.out.println("ssadasdsasdadasdadassda");
-        String[] a = {"MOB-1", "MOB-2"};
-        for (String id : a) {
-            if (list.remove(id)) {
-                write(id, null);
-            } else {
-                write(id, "fail");
-            }
-        }
-
-    }
-
-    public static void write(String id, String status) {
-
-        status = status == null ? "pass" : status;
-        try {
-            FileWriter fw = new FileWriter("testout.txt", true);
-            fw.write(id + " " + status+"\n");
-            fw.close();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        System.out.println("Success...");
-    }
+//    @AfterClass
+//    public static void teardown() {
+//        Loginpage loginpage = new Loginpage();
+//        List l = loginpage.getList();
+//        writeTestOutput(l);
+//        System.out.println("Ran the after");
+//    }
+//
+//    public static void writeTestOutput(List list) {
+//        System.out.println("ssadasdsasdadasdadassda");
+//        String[] a = {"MOB-1", "MOB-2"};
+//        for (String id : a) {
+//            if (list.remove(id)) {
+//                write(id, null);
+//            } else {
+//                write(id, "fail");
+//            }
+//        }
+//
+//    }
+//
+//    public static void write(String id, String status) {
+//
+//        status = status == null ? "pass" : status;
+//        try {
+//            FileWriter fw = new FileWriter("testout.txt", true);
+//            fw.write(id + " " + status+"\n");
+//            fw.close();
+//        } catch (Exception e) {
+//            System.out.println(e);
+//        }
+//        System.out.println("Success...");
+//    }
 }
